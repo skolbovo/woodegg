@@ -973,7 +973,7 @@ $(function()
 		 			{  
 		 				if ($form.find('#form-feedback-alert').length == 0) // Add Alert
 		 				{
-		 					$form.append("<div id='form-feedback-alert' class='mt-2'><div class='alert alert-success' role='alert'><button type='button' class='btn-close float-end' data-bs-dismiss='alert' aria-hidden='true'></button><strong></strong></div></div>");
+		 					$form.append("<div id='form-feedback-alert' class='mt-2'><div class='alert alert-success' role='alert'><button type='button' class='btn-close float-end' data-bs-dismiss='alert' aria-hidden='true'></button><span class='alert-msg'></span></div></div>");
 		 				}
 		 				
 		 				var alert = $('#form-feedback-alert .alert');
@@ -987,7 +987,7 @@ $(function()
 		 						type = 'fail';
 		 					}
 
-		 					$('#form-feedback-alert strong').html($form.find('.g-recaptcha').attr('data-capture-'+type));
+		 					$('#form-feedback-alert .alert-msg').html($form.find('.g-recaptcha').attr('data-capture-'+type));
 		 					alert.addClass('alert-danger').removeClass('alert-success');
 		 				}
 		 				else // Success
@@ -995,8 +995,8 @@ $(function()
 		 					if ($form.is('[data-success-msg]')) // Show Success Message
 							{
 								alert.addClass('alert-success').removeClass('alert-danger');
-		 						$('#form-feedback-alert strong').html($form.attr('data-success-msg'));
-								$form.trigger("reset"); // Clear Form	
+		 						$('#form-feedback-alert .alert-msg').html($form.attr('data-success-msg'));
+								$form.trigger("reset"); // Clear Form
 							}
 							else // Re-Direct
 							{
@@ -1008,7 +1008,7 @@ $(function()
 			   		{
 						if ($('#form-alert').length == 0)
 						{
-							$form.append("<div id='form-alert' class='mt-2'><div class='alert alert-danger' role='alert'><button type='button' class='btn-close float-end' data-bs-dismiss='alert' aria-hidden='true'></button><strong>"+$form.attr('data-fail-msg')+"</strong></div></div>");
+							$form.append("<div id='form-alert' class='mt-2'><div class='alert alert-danger' role='alert'><button type='button' class='btn-close float-end' data-bs-dismiss='alert' aria-hidden='true'></button><span>"+$form.attr('data-fail-msg')+"</span></div></div>");
 						}
 
 						// Log Error

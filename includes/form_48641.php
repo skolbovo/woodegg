@@ -10,11 +10,11 @@
 	$optin_24998_1795_48641 = $_POST['optin_24998_1795_48641'];
 	
 	// Create Message	
-	$to = 'receiver@yoursite.com';
-	$email_subject = "Message from a Blocs website.";
+	$to = 'info.woodegg@gmail.com';
+	$email_subject = "Message from  woodegg";
 	$email_body = "You have received a new message. \n\nName_24998_1795_48641: $name_24998_1795_48641 \nEmail_24998_1795_48641: $email_24998_1795_48641 \nMessage_24998_1795_48641: $message_24998_1795_48641 \nOptin_24998_1795_48641: $optin_24998_1795_48641 \n";
 	$headers = "MIME-Version: 1.0\r\nContent-type: text/plain; charset=UTF-8\r\n";	
-	$headers .= "From: contact@yoursite.com\r\n";
+	$headers .= "From: info.woodegg@gmail.com\r\n";
 	$headers .= "Reply-To: $email_24998_1795_48641";
 
 	// Post Message
